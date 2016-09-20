@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Developing Data Products - Project Assignment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products - Project Assignment">
+  <meta name="author" content="Bernard Lei">
+  <meta name="generator" content="slidify">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="stockAnalysisPresentationSlides_files/default.css" media="all">
+  <link rel="stylesheet" href="stockAnalysisPresentationSlides_files/phone.css" media="only screen and (max-device-width: 480px)">
+  <link rel="stylesheet" href="stockAnalysisPresentationSlides_files/slidify.css">
+  <link rel="stylesheet" href="stockAnalysisPresentationSlides_files/tomorrow.css">
+  <script src="stockAnalysisPresentationSlides_files/slides.js" data-requiremodule="slides" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="stockAnalysisPresentationSlides_files/order.js" data-requiremodule="order" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="stockAnalysisPresentationSlides_files/slide_config.js" data-requiremodule="slide_config" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="stockAnalysisPresentationSlides_files/modernizr.js" data-requiremodule="modernizr.custom.45394" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="stockAnalysisPresentationSlides_files/hammer.js" data-requiremodule="hammer" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="stockAnalysisPresentationSlides_files/slide-controller.js" data-requiremodule="slide-controller" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><script src="stockAnalysisPresentationSlides_files/slide-deck.js" data-requiremodule="slide-deck" data-requirecontext="_" charset="utf-8" type="text/javascript"></script><!-- base href="file:///C:/Users/bernard/Desktop/DataScienceCourses2016/Data-Products/HW1/stockPrediction/index.html" --> <!-- This amazingness opens all links in a new tab. -->  <link rel="stylesheet" href="stockAnalysisPresentationSlides_files/ribbons.css">
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="stockAnalysisPresentationSlides_files/jquery-1.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" src="stockAnalysisPresentationSlides_files/require-1.js">
+  </script>
+  
+  
+
+<link href="stockAnalysisPresentationSlides_files/css.css" rel="stylesheet"></head>
+<body class="loaded" style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide data-total-slides="5" data-slide-num="1" class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products - Project Assignment</h1>
+    <h2>Stock Prediction and Analysis</h2>
+    <p>Bernard Lei<br>Data Science Project</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide data-total-slides="5" data-slide-num="2" class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <p>OBJECTIVE:</p>
+
+<p>Develop an application to predict and analyze a particular stock or index:</p>
+
+<pre><code class="vhdl">   <span class="keyword">Use</span> <span class="keyword">of</span> various widgets <span class="keyword">of</span> the Shiny tool
+   Understand the <span class="keyword">process</span> <span class="keyword">of</span> publishing application <span class="keyword">in</span> Shiny
+   Interface <span class="keyword">with</span> Shiny tool, using ui.R <span class="keyword">and</span> server.R code.
+</code></pre>
+
+<p>Example of ui.R code:</p>
+
+<p>Sidebar for a stock quote</p>
+
+<pre><code class="r"><span class="keyword">library</span>(shiny)
+shinyUI(fluidPage(
+    sidebarPanel(
+      textInput(<span class="string">"caption"</span>, <span class="string">"Enter the stock or index symbol"</span>, <span class="string">""</span>),
+      submitButton(<span class="string">"Submit"</span>) 
+    )))
+</code></pre>
+
+<p>&lt;!--html_preserve--&gt;</p><div class="container-fluid"><p></p>
+
+<div class="col-sm-4">
+<form class="well">
+<div class="form-group shiny-input-container">
+<label for="caption">Enter the stock or index symbol</label>
+<input id="caption" class="form-control" type="text">
+</div>
+
+<div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<p></p></form>
+</div>
+</div>&lt;!--/html_preserve--&gt;<p></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide data-total-slides="5" data-slide-num="3" class="far-past" id="slide-2" style="background:;">
+  <article data-timings="">
+    <p>PROJECT DETAIL:</p>
+
+<p>To assist the stock investor to make better informed decisions, a 
+complex application has been developed to generate analytical tables and
+ diagrams to summarize and visualize the performance of a particular 
+stock or index.  First, the Stock Quote selection will provide 
+up-to-date stock or index information.  Second, for a faster stock 
+prediction, the Kalman Filter Prediction uses the fast Kalman Filter 
+machine learning algorithm to predict tomorrow's stock momentum, prices,
+ and volume.  For a slower prediction, the Stock Forecast selection uses
+ a variety of machine learning algorithms such as Random Forest, Nearest
+ Neighbor, Neural Network, SVM, Naive Bayes, Kalman Filter, Ada Boost, 
+and etc to predict tomorrow's stock momentum, prices, and volume in a 
+majority voting system in order to get the best results.  Moreover, 
+there are 7 analytical stock analysis tools such as MACD, SMA, OBV, RSI,
+ AROON, and etc to help the investor to visualize the future performance
+ of the stock or index.</p>
+
+<p>Finally, the Stock Summary selection will summarize the prediction 
+and analysis information in a detailed table and a visualized diagram of
+ that particular stock or index.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide data-total-slides="5" data-slide-num="4" class="past" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p>USER INTERFACE:</p>
+
+<p>The application takes the stock or index symbol from the user such as
+ Google(GOOG) or Facebook(FB).  Next, the user has to select one of the 
+following choices from the menu:</p>
+
+<pre><code class="delphi">Stock Quote
+Stock Moving Average Convergence Divergence
+Stock Simple Moving Averages
+Stock <span class="keyword">On</span> Balance Volume
+Stock Accumulation Distribution Line
+Stock Average Directional <span class="keyword">Index</span>
+Stock Aroon Indicator
+Stock Relative Strength <span class="keyword">Index</span>
+Stock Stochastic Oscillator
+Stock Kalman Filter Prediction
+Stock Forecast
+Stock Analysis Summary
+</code></pre>
+
+<p>Finally, the user can select the number of days to analyze or predict
+ a particular stock  or index, ranging from 55 days to 2,600 days in a 
+slider.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide data-total-slides="5" data-slide-num="5" class="current" id="slide-4" style="background:;">
+  <article data-timings="">
+    <p>APPLICATION EXAMPLE:</p>
+
+<p><img src="stockAnalysisPresentationSlides_files/MACD.jpg" alt="APicture"></p>
+
+<p>Click the Application link below: 
+<a href="https://leisdesignservices.shinyapps.io/stockAnalysis/">https://leisdesignservices.shinyapps.io/stockAnalysis/</a></p>
+
+<p>Click the following link to see the source code:
+<a href="https://github.com/blei139/DataProduct.git">https://github.com/blei139/DataProduct.git</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id="io2012-ptoc" style="display:none;">
+    <ul>
+      <li class="">
+      <a href="#" target="_self" rel="tooltip" data-slide="1" title="NA">
+         1
+      </a>
+    </li>
+    <li class="">
+      <a href="#" target="_self" rel="tooltip" data-slide="2" title="NA">
+         2
+      </a>
+    </li>
+    <li class="active">
+      <a href="#" target="_self" rel="tooltip" data-slide="3" title="NA">
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel="tooltip" data-slide="4" title="NA">
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+
+  
+  
+  
+  <script src="stockAnalysisPresentationSlides_files/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </body><!-- Load Javascripts for Widgets --><!-- LOAD HIGHLIGHTER JS FILES --></html>
