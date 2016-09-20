@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products - Project Assignment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products - Project Assignment">
+  <meta name="author" content="Bernard Lei">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products - Project Assignment</h1>
+    <h2>Stock Prediction and Analysis</h2>
+    <p>Bernard Lei<br/>Data Science Project</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <p>OBJECTIVE:</p>
+
+<p>Develop an application to predict and analyze a particular stock or index:</p>
+
+<pre><code>   Use of various widgets of the Shiny tool
+   Understand the process of publishing application in Shiny
+   Interface with Shiny tool, using ui.R and server.R code.
+</code></pre>
+
+<p>Example of ui.R code:</p>
+
+<p>Sidebar for a stock quote</p>
+
+<pre><code class="r">library(shiny)
+shinyUI(fluidPage(
+    sidebarPanel(
+      textInput(&quot;caption&quot;, &quot;Enter the stock or index symbol&quot;, &quot;&quot;),
+      submitButton(&quot;Submit&quot;) 
+    )))
+</code></pre>
+
+<p>&lt;!--html_preserve--&gt;<div class="container-fluid"></p>
+
+<div class="col-sm-4">
+<form class="well">
+<div class="form-group shiny-input-container">
+<label for="caption">Enter the stock or index symbol</label>
+<input id="caption" type="text" class="form-control" value=""/>
+</div>
+
+<div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<p></form>
+</div>
+</div>&lt;!--/html_preserve--&gt;</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <article data-timings="">
+    <p>PROJECT DETAIL:</p>
+
+<p>To assist the stock investor to make better informed decisions, a complex application has been developed to generate analytical tables and diagrams to summarize and visualize the performance of a particular stock or index.  First, the Stock Quote selection will provide up-to-date stock or index information.  Second, for a faster stock prediction, the Kalman Filter Prediction uses the fast Kalman Filter machine learning algorithm to predict tomorrow&#39;s stock momentum, prices, and volume.  For a slower prediction, the Stock Forecast selection uses a variety of machine learning algorithms such as Random Forest, Nearest Neighbor, Neural Network, SVM, Naive Bayes, Kalman Filter, Ada Boost, and etc to predict tomorrow&#39;s stock momentum, prices, and volume in a majority voting system in order to get the best results.  Moreover, there are 7 analytical stock analysis tools such as MACD, SMA, OBV, RSI, AROON, and etc to help the investor to visualize the future performance of the stock or index.</p>
+
+<p>Finally, the Stock Summary selection will summarize the prediction and analysis information in a detailed table and a visualized diagram of that particular stock or index.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p>USER INTERFACE:</p>
+
+<p>The application takes the stock or index symbol from the user such as Google(GOOG) or Facebook(FB).  Next, the user has to select one of the following choices from the menu:</p>
+
+<pre><code>Stock Quote
+Stock Moving Average Convergence Divergence
+Stock Simple Moving Averages
+Stock On Balance Volume
+Stock Accumulation Distribution Line
+Stock Average Directional Index
+Stock Aroon Indicator
+Stock Relative Strength Index
+Stock Stochastic Oscillator
+Stock Kalman Filter Prediction
+Stock Forecast
+Stock Analysis Summary
+</code></pre>
+
+<p>Finally, the user can select the number of days to analyze or predict a particular stock  or index, ranging from 55 days to 2,600 days in a slider.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <article data-timings="">
+    <p>APPLICATION EXAMPLE:</p>
+
+<p><img src="./MACD.jpg" alt="APicture"></p>
+
+<p>Click the Application link below: 
+<a href="https://leisdesignservices.shinyapps.io/stockAnalysis/">https://leisdesignservices.shinyapps.io/stockAnalysis/</a></p>
+
+<p>Click the following link to see the source code:
+<a href="https://github.com/blei139/DataProduct.git">https://github.com/blei139/DataProduct.git</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='NA'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='NA'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
